@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    background: linear-gradient(to right, #f54291, #4cd3c2);
+    margin: none;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    transform: scale(0.65);
+}
+
+.calculator-grid>button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid black;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.calculator-grid>button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.span-two {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.output {
+    background-color: rgba(000, 000, 000, 0.75);
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+/* The word-break property specifies how words should break when reaching the end of a line. */
+
+.move-end {
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
